@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loneliness Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="light-theme">
+    <header>
+        <div class="theme-toggle">
+            <button onclick="toggleTheme()">Switch Theme</button>
+        </div>
+        <h1 class="animated-title">Loneliness Companion</h1>
+        <p id="greetingMessage">Welcome!</p>
+        <p id="motivationalMessage">You're doing amazing, keep it up!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#reflection">Reflections & Journal</a></li>
+            <li><a href="#moodTracker">Mood Tracker</a></li>
+            <li><a href="#socialGoals">Goals & Activities</a></li>
+            <li><a href="#communityForum">Community Forum</a></li>
+            <li><a href="#virtualCompanion">Virtual Companion</a></li>
+            <li><a href="#progressDashboard">Progress Dashboard</a></li>
+            <li><a href="#resources">Resources & Tips</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Daily Reflections -->
+        <section id="reflection" class="fade-in">
+            <h2>Daily Reflections</h2>
+            <textarea id="reflectionInput" placeholder="How are you feeling today?"></textarea>
+            <button onclick="saveReflection()">Save Reflection</button>
+        </section>
+
+        <!-- Mood Tracker -->
+        <section id="moodTracker" class="fade-in">
+            <h2>Daily Mood Tracker</h2>
+            <input type="range" id="moodSlider" min="1" max="5" step="1" value="3">
+            <button onclick="saveMood()">Save Mood</button>
+            <canvas id="moodChart"></canvas>
+        </section>
+
+        <!-- Social Goals -->
+        <section id="socialGoals" class="fade-in">
+            <h2>Set Small Social Goals</h2>
+            <select id="goalSelector">
+                <option value="">Select a Goal</option>
+                <option value="callFriend">Call a friend today</option>
+                <option value="joinActivity">Join a local group activity</option>
+                <option value="takeWalk">Take a walk in a nearby park</option>
+            </select>
+            <button onclick="saveGoal()">Save Goal</button>
+            <p id="goalMessage"></p>
+        </section>
+
+        <!-- Community Forum -->
+        <section id="communityForum" class="fade-in">
+            <h2>Community Forum</h2>
+            <textarea id="forumPost" placeholder="Share your thoughts..."></textarea>
+            <button onclick="postToForum()">Post</button>
+            <div id="forumPosts"></div>
+        </section>
+
+        <!-- Virtual Companion -->
+        <section id="virtualCompanion" class="fade-in">
+            <h2>Virtual Companion</h2>
+            <div id="chatBox">
+                <div id="chatMessages"></div>
+                <input type="text" id="userInput" placeholder="Type here..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </section>
+
+        <!-- Progress Dashboard -->
+        <section id="progressDashboard" class="fade-in">
+            <h2>Your Progress</h2>
+            <div class="progress">
+                <canvas id="progressChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Resources and Tips -->
+        <section id="resources" class="fade-in">
+            <h2>Resources and Tips</h2>
+            <ul>
+                <li><a href="https://www.helpguide.org/articles/mental-health/loneliness-and-isolation.htm" target="_blank">HelpGuide: Coping with Loneliness</a></li>
+                <li><a href="https://www.ted.com/topics/loneliness" target="_blank">TED Talks on Loneliness</a></li>
+                <li><a href="https://www.mind.org.uk/information-support/tips-for-everyday-living/loneliness/" target="_blank">Mind: Tips for Overcoming Loneliness</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
